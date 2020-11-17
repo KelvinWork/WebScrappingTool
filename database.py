@@ -27,15 +27,27 @@ print(cellValue)
 print(type(cellValue))
 nextCell =6
 
-if cellValue != None:
-    nextCell += 1
+# if cellValue == None:
+#     nextCell += 1
+#     print("cellValue != None has been entered")
+#
+#
+# elif cellValue ==None:
+#     #ws1["C{}".format(nextCell)] = "Test1"
+#     ws1["F2"] = "Hello World"
+#     wb.save(filename="Test1.xlsx")
+#     print("cellValue == None has been entered")
+#
+# else:
 
 
-elif cellValue ==None:
-    ws1["C{}".format(nextCell)] = "Test1"
-    wb.save(filename="Test1.xlsx")
+
+ws1["C{}".format(nextCell)] = "Test1"
+wb.save(filename="Test1.xlsx")
+print("cellValue == None has been s")
+
 
 print(nextCell)
-
+print("C{}".format(nextCell))
 
 
