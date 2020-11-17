@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from database import *
 
 
 productUrlList = []
@@ -17,9 +18,11 @@ for product in productUrlList:
     getPrice = soup.find("script", type="text/javascript").getText  # get the script that has the price tag in it
     getPriceStr = str(getPrice)
     priceLocation = getPriceStr.find("$", 0)
+    priceResult = getPriceStr[priceLocation:priceLocation+6]
 
     print("Below is supposed to show price")
-    print(getPriceStr[priceLocation:priceLocation+6])
+    print(priceResult)
+    writeWorkBook(priceResult)
 
 
 
