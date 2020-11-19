@@ -6,5 +6,6 @@ This program is able to extract data(prices) of each product that is appended in
 ## Future Implentations
 - [ ] Run this program on the cloud 
 - [ ] Able to have a time log of what the data was extracted
-- [ ] 
+- [ ] Desgined a trained model using machine learning to better extracted data from other website.
+
  ![GitHub Logo](/images/logo.png)
