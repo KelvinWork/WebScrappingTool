@@ -8,4 +8,4 @@ This program is able to extract data(prices) of each product that is appended in
 - [ ] Able to have a time log of what the data was extracted
 - [ ] Desgined a trained model using machine learning to better extracted data from other website.
 
- ![GitHub Logo](/images/logo.png)
+ ![GitHub Logo](https://www.python.org/)
