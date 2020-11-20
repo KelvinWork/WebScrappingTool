@@ -5,8 +5,8 @@
 This program is able to extract data(prices) of each product that is appended in the list using BeautifulSoup Module and from there further parse the data and place the data in an excel sheets using Openpyxl module.
 
 ## Current Limitation
-Able to accurately retireve data of listing with single variation only
-Items with mutiple varation like phone with different storage capacity variation. It will only take the main pricing 
+- Able to accurately retireve data of listing with single variation only
+- Items with mutiple varation like phone with different storage capacity variation. It will only take the main pricing 
 
 ## Pending RoadMaps
 - [ ] Able to retrieve the lowest price of the day
