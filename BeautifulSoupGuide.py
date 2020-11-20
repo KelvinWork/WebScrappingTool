@@ -1,43 +1,25 @@
 import requests
 from bs4 import BeautifulSoup
-import logging
 
 
-#result = requests.get("https://www.lazada.sg/products/logitech-mx-master-3-advanced-wireless-mouse-with-bluetooth-ultra-fast-magspeed-scroll-in-app-customization-and-pair-up-to-3-devices-work-from-home-home-based-learning-i422836641-s1073562642.html?spm=a2o42.searchlist.list.1.314274deAgHfQj&search=1")
-result = """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>A Test Webscrape</title>
-</head>
-<body>
-<div class="category1" id="foo">
-      <div class="category2" id="bar">
-            <div class="category3">
-            </div>
-            <div class="category4">
-                 <div class="category5"> test
-                 </div>
-            </div>
-      </div>
-</div>
-</body>
-</html>
-"""
-#src = result.content
-soup = BeautifulSoup(result, 'lxml')
+#result = requests.get("https://www.lazada.sg/products/cetaphil-gentle-skin-cleanser-1l-i680852034-s2087930187.html?spm=a2o42.seller.list.17.28aa7781iJbMzw&mp=1")
+result = requests.get("https://www.lazada.sg/products/stanley-750ml-stainless-steel-classic-vacuum-flask-water-bottle-25oz-black-for-road-trip-camping-fishing-outdoor-i231388228-s354697774.html?spm=a2o42.searchlist.list.11.64331138fZadw7&search=1")
+#result =requests.get("https://www.lazada.sg/products/stanley-cordless-18v-brushless-hammer-drill-driver-sbh201d2k-i698870508-s2175476501.html?spm=a2o42.searchlist.list.11.635a1138ltohLp&search=1")
+src = result.content
+soup = BeautifulSoup(src, 'lxml')
+getName = soup.find("title", ).getText
+print(getName)
+getNameStr =str(getName)
 
-#print(soup.prettify()) #prints out the entire log
 
-# for a in soup:
-#     if(a is not None):
-#         getWord = soup.find("div")
-#         print(getWord)
+nameLocationLast = getNameStr.find("|", 0)
+nameLocationFirst = getNameStr.find(">", 0)
 
-getWord = soup.find("div",{"class":"category5"}).getText()
-print(getWord)
+nameResult = getNameStr[nameLocationFirst +1:nameLocationLast]
+
+print(nameResult)
+print(len(nameResult))
 
 
 
-#for featured_challenge in featured_challenges:
-    #print(featured_challenge)
+#print(soup.prettify())

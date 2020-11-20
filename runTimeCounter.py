@@ -1,25 +1,18 @@
-import time
-import datetime
+import requests
+from bs4 import BeautifulSoup
+from BeautifulSoupGuide import *
+import string
 
 
+alphabetList = list(string.ascii_uppercase)
 
+urlTest = ["First List", "Second List", "Third List"]
 
+blockPlacement = -1
 
+print(alphabetList[1])
 
+for x in urlTest:
 
-#local_time = time.ctime(seconds)
-#print("Local time:", local_time)
-#print(type(local_time))
-
-run = True
-
-while run ==True:
-    seconds = time.time()
-    mins2 = seconds + 10.0
-    # print(type(seconds))
-    # print(mins2)
-    # print(seconds)
-
-
-    if(seconds>= mins2 ):
-        print("two mins has passed")
+    blockPlacement += 1
+    getTwoArugmentTest(x, alphabetList[blockPlacement])
