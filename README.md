@@ -7,6 +7,8 @@ This program is able to extract data(prices) of each product that is appended in
 ## Current Limitation
 - Able to accurately retireve data of listing with single variation only
 - Items with mutiple varation like phone with different storage capacity variation. It will only take the main pricing 
+### Captcha Restriction
+-Captcha Restriction occur during personal wifi (Emergency pending fix)
 
 ## Pending RoadMaps
 - [ ] Able to retrieve the lowest price of the day
