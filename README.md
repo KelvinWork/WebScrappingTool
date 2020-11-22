@@ -8,9 +8,11 @@ This program is able to extract data(prices) of each product that is appended in
 - Able to accurately retireve data of listing with single variation only
 - Items with mutiple varation like phone with different storage capacity variation. It will only take the main pricing 
 ### Captcha Restriction
--Captcha Restriction occur during personal wifi (Emergency pending fix)
+~-Captcha Restriction occur during personal wifi (Emergency pending fix)~
 
-Ref :https://www.scrapehero.com/how-to-fake-and-rotate-user-agents-using-python-3/
+Ref:
+- https://www.scrapehero.com/how-to-fake-and-rotate-user-agents-using-python-3/
+- http://blog.adnansiddiqi.me/5-strategies-to-write-unblock-able-web-scrapers-in-python/
 
 ## Pending RoadMaps
 - [ ] Able to retrieve the lowest price of the day
