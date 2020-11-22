@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from database import *
 import string
+import time
 
 alphabetList = list(string.ascii_uppercase)
 productUrlList = []
@@ -20,6 +21,7 @@ productUrlList.append("https://www.lazada.sg/products/apple-iphone-se-i672058450
 initialCellBlock = -1
 
 for product in productUrlList:
+    time.sleep(4)
     result = requests.get(product)
     src = result.content
     soup = BeautifulSoup(src, 'lxml')
