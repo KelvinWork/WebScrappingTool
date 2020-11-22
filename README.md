@@ -10,6 +10,8 @@ This program is able to extract data(prices) of each product that is appended in
 ### Captcha Restriction
 -Captcha Restriction occur during personal wifi (Emergency pending fix)
 
+Ref :https://www.scrapehero.com/how-to-fake-and-rotate-user-agents-using-python-3/
+
 ## Pending RoadMaps
 - [ ] Able to retrieve the lowest price of the day
 
