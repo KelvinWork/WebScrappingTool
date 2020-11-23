@@ -9,6 +9,7 @@ This program is able to extract data(prices) of each product that is appended in
 - Items with mutiple varation like phone with different storage capacity variation. It will only take the main pricing 
 ### Captcha Restriction
 ~-Captcha Restriction occur during personal wifi (Emergency pending fix)~
+#### Occurs using Personal internet
 
 Ref:
 - https://www.scrapehero.com/how-to-fake-and-rotate-user-agents-using-python-3/
