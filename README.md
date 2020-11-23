@@ -1,6 +1,7 @@
 # WebScrappingTool
 ![Python Logo](https://www.python.org/static/img/python-logo.png)
 
+
 ## Current Features
 This program is able to extract data(prices) of each product that is appended in the list using BeautifulSoup Module and from there further parse the data and place the data in an excel sheets using Openpyxl module.
 
@@ -16,6 +17,7 @@ Ref:
 - http://blog.adnansiddiqi.me/5-strategies-to-write-unblock-able-web-scrapers-in-python/
 
 ## Pending RoadMaps
+- [ ] Find the main data that has all the infomation about the pricing of various option
 - [ ] Able to retrieve the lowest price of the day
 
 
