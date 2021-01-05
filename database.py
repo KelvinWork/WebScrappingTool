@@ -2,6 +2,7 @@ import openpyxl
 from openpyxl import Workbook
 from openpyxl import load_workbook
 
+import datetime
 
 
 def createWorkBook():
@@ -36,12 +37,38 @@ def writeWorkBook(price, alphabet):
 
         if (itemsInCell == None):
             ws1['{}{}'.format(cellBlock, (cellNumber - 1))] = price
-
             break
 
     #print("write function has been called")
     #print(cellNumber)
     wb.save(filename="Test1.xlsx")
+
+def writeDateExtracted():
+    wb = load_workbook(filename="Test1.xlsx")
+    ws1 = wb.active
+    ws1.title = "Sheet"  # sheet name
+
+
+    todayDate = datetime.datetime.now().date()
+    ws1['A1'] = "Date"
+    dateBlock = "A"
+    dateCellNumber = 1
+
+    #writing of the date
+
+    print(todayDate)
+    dateInCell = ws1['{}{}'.format(dateBlock, dateCellNumber)].value
+
+    while(dateInCell != None):
+        dateInCell = ws1['{}{}'.format(dateBlock, dateCellNumber)].value
+        dateCellNumber += 1
+
+        if(dateInCell == None):
+            ws1['{}{}'.format(dateBlock, (dateCellNumber - 1))] = todayDate
+            break
+
+    wb.save(filename="Test1.xlsx")
+
 
 
 def readWorkBook(cells):
@@ -56,7 +83,6 @@ def writeHeaderProduct(productName, alphabet):
     wb = load_workbook(filename="Test1.xlsx")
     ws1 = wb.active
     ws1.title = "Sheet"
-
     ws1['{}1'.format(alphabet)] = productName
     wb.save(filename="Test1.xlsx")
     #print("test function called")

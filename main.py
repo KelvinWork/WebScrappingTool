@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from database import *
 import string
+import datetime
 import random
 
 alphabetList = list(string.ascii_uppercase)
@@ -47,8 +48,9 @@ productUrlList.append("https://www.lazada.sg/products/xiaomi-mi-dual-mode-wirele
 productUrlList.append("https://www.lazada.sg/products/apple-iphone-se-i672058450-s2050418199.html?")
 productUrlList.append("https://www.lazada.sg/products/apple-iphone-se-i672058450-s2050418196.html?")
 productUrlList.append("https://www.lazada.sg/products/apple-iphone-se-i672058450-s2050418199.html?")  # Iphone SE White 256GB
+productUrlList.append("https://www.lazada.sg/products/prism-x240-1200r-24-144hz-1ms-curved-fhd-1920-x-1080-freesync-g-sync-ready-gaming-monitor-i225440820-s449843155.html?spm=a2o42.searchlist.list.1.99ed1b21etK8ej&search=1")
 
-initialCellBlock = -1
+initialCellBlock = 0
 
 for product in productUrlList:
     result = requests.get(product, headers=lazHeader)
@@ -79,6 +81,8 @@ for product in productUrlList:
 
     writeHeaderProduct(nameResult, cellBlockResult)
     writeWorkBook(priceResult, cellBlockResult)
+
+writeDateExtracted()
 
 
 
