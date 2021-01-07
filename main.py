@@ -4,6 +4,16 @@ from database import *
 import string
 import datetime
 import random
+import time
+start_time = time.time()
+
+# second alternative to extract data
+from selenium import webdriver
+
+op = webdriver.ChromeOptions()
+op.add_argument('headless')
+driver = webdriver.Chrome(options=op)
+
 
 alphabetList = list(string.ascii_uppercase)
 productUrlList = []
@@ -53,6 +63,10 @@ productUrlList.append("https://www.lazada.sg/products/prism-x240-1200r-24-144hz-
 initialCellBlock = 0
 
 for product in productUrlList:
+    loop_time = time.time()
+    driver.get(product)
+    productPrice = driver.find_element_by_class_name('pdp-product-price').text
+
     result = requests.get(product, headers=lazHeader)
     src = result.content
     soup = BeautifulSoup(src, 'lxml')
@@ -75,15 +89,18 @@ for product in productUrlList:
     initialCellBlock += 1
     cellBlockResult = alphabetList[initialCellBlock]  # output Strings
 
+
     #print("Below is supposed to show price")
     #print(cellBlockResult)
     #print(type(cellBlockResult))
 
     writeHeaderProduct(nameResult, cellBlockResult)
-    writeWorkBook(priceResult, cellBlockResult)
+    writeWorkBook(productPrice, cellBlockResult)
+    print("Product {} extraction completed".format(initialCellBlock))
+    print("Programme Finished in  {:2f} seconds ---"  .format(time.time() - loop_time))
 
 writeDateExtracted()
-
+print("Programme Finished in  {:2f} seconds ---"  .format(time.time() - start_time))
 
 
 

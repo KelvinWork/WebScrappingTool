@@ -6,12 +6,14 @@ import datetime
 
 
 def createWorkBook():
+    print("- -writeWorkBook Called")
     wb = Workbook()
     dest_filename = 'Test1.xlsx'
     wb.save(filename=dest_filename)
 
 
 def writeWorkBook(price, alphabet):
+    print("- -writeWorkBook Called")
     wb = load_workbook(filename="Test1.xlsx")
     ws1 = wb.active
     ws1.title = "Sheet"  # sheet name
@@ -44,6 +46,7 @@ def writeWorkBook(price, alphabet):
     wb.save(filename="Test1.xlsx")
 
 def writeDateExtracted():
+    print("- -writeDateExtract Called")
     wb = load_workbook(filename="Test1.xlsx")
     ws1 = wb.active
     ws1.title = "Sheet"  # sheet name
@@ -72,6 +75,7 @@ def writeDateExtracted():
 
 
 def readWorkBook(cells):
+    print("- -readWorkBook Called")
     wb = load_workbook(filename="Test1.xlsx", )
     sheet_ranges = wb['Sheet']
     print(sheet_ranges[cells].value)
@@ -80,6 +84,7 @@ def readWorkBook(cells):
 
 
 def writeHeaderProduct(productName, alphabet):
+    print("- -writeHeaderProduct Called")
     wb = load_workbook(filename="Test1.xlsx")
     ws1 = wb.active
     ws1.title = "Sheet"
