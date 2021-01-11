@@ -67,24 +67,34 @@ for product in productUrlList:
     driver.get(product)
     productPrice = driver.find_element_by_class_name('pdp-product-price').text
 
+    productPriceStr = str(productPrice)
+    currentProductPriceFirst = productPriceStr.find("$", 0)
+    currentProductPriceLast = productPriceStr.find(".", 0)
+    currentPrice = productPriceStr[currentProductPriceFirst + 0: currentProductPriceLast + 3]  # get the current pricing on the listing
+
+
+    originalPriceFirst = productPriceStr.find("$", 2)
+    originalPriceLast = productPriceStr.find(".", currentProductPriceLast + 1)
+    originalPrice = productPriceStr[originalPriceFirst + 0:originalPriceLast + 3]   # get the original pricing on the listing
+
     result = requests.get(product, headers=lazHeader)
     src = result.content
     soup = BeautifulSoup(src, 'lxml')
 
+    # initial method of getting the pricing on the listing
     getPrice = soup.find("script", type="text/javascript").getText  # get the script that has the price tag in it
     getPriceStr = str(getPrice)
     priceLocation = getPriceStr.find("$", 0)
-    priceResult = getPriceStr[priceLocation:priceLocation+6]
-    # getPrice only retrieve the original price
+    priceResult = getPriceStr[priceLocation:priceLocation+6]  # getPrice only retrieve the original price
 
 
 
- 
-    getName = soup.find("title", ).getText  # get the script that has the title in it
+    getName = soup.find("title", ).getText   # get the script that has the title in it
     getNameStr = str(getName)
     nameLocationLast = getNameStr.find("|", 0)
     nameLocationFirst = getNameStr.find(">", 0)
     nameResult = getNameStr[nameLocationFirst + 1:nameLocationLast]
+
 
     initialCellBlock += 1
     cellBlockResult = alphabetList[initialCellBlock]  # output Strings
@@ -95,12 +105,12 @@ for product in productUrlList:
     #print(type(cellBlockResult))
 
     writeHeaderProduct(nameResult, cellBlockResult)
-    writeWorkBook(productPrice, cellBlockResult)
+    writeWorkBook(currentPrice, cellBlockResult)
     print("Product {} extraction completed".format(initialCellBlock))
-    print("Programme Finished in  {:2f} seconds ---"  .format(time.time() - loop_time))
+    print("\n")
+    print("Extraction Finished in  {:2f} seconds ---"  .format(time.time() - loop_time))
 
 writeDateExtracted()
 print("Programme Finished in  {:2f} seconds ---"  .format(time.time() - start_time))
-
 
 
