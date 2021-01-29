@@ -6,24 +6,24 @@
 This program is able to extract data(prices) of each product that is appended in the list using BeautifulSoup Module and from there further parse the data and place the data in an excel sheets using Openpyxl module.
 
 ## Current Limitation
-- Able to accurately retireve data of listing with single variation only
-- Items with mutiple varation like phone with different storage capacity variation. It will only take the main pricing 
+- ~Able to accurately retireve data of listing with single variation only~
+- ~Items with mutiple varation like phone with different storage capacity variation. It will only take the main pricing~ 
 ### Captcha Restriction
-~-Captcha Restriction occur during personal wifi (Emergency pending fix)~
-#### Occurs using Personal internet
+~-Captcha Restriction occur during personal wifi~
+
 
 Ref:
 - https://www.scrapehero.com/how-to-fake-and-rotate-user-agents-using-python-3/
 - http://blog.adnansiddiqi.me/5-strategies-to-write-unblock-able-web-scrapers-in-python/
 
 ## Pending RoadMaps
-- [ ] Find the main data that has all the infomation about the pricing of various option
-- [ ] Able to retrieve the lowest price of the day
+- [x] Find the main data that has all the infomation about the pricing of various option
+- [x] Able to retrieve the lowest price of the day
 
 
 ## Future Implentations
 - [ ] Run this program on the cloud 
-- [ ] Able to have a time log of what the data was extracted
+- [x] Able to have a time log of what the data was extracted
 - [ ] Notify user on historic all time low
 - [ ] When user wants to buy One Click to complete transaction
 - [ ] Desgined a trained model using machine learning to better extracted data from other website.
