@@ -12,7 +12,7 @@ from selenium import webdriver
 
 op = webdriver.ChromeOptions()
 op.add_argument('headless')
-driver = webdriver.Chrome(options=op)
+driver = webdriver.Chrome(options= op)
 
 
 alphabetList = list(string.ascii_uppercase)
