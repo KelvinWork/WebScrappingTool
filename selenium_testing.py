@@ -6,7 +6,7 @@ op = webdriver.ChromeOptions()
 op.add_argument('headless')
 driver = webdriver.Chrome(options=op)
 
-driver.get("https://www.lazada.sg/products/atz-1m-cat-6-gigabit-ethernet-lan-network-patchcord-cable-1m-network-cable-i169304397-s219983843.html?spm=a2o42.searchlist.list.1.5acf6d2aeTJzaa&search=1")
+driver.get("URL")
 #assert "Python" in driver.title
 #elem = driver.find_element_by_name("q")
 productPrice = driver.find_element_by_class_name('pdp-product-price').text
